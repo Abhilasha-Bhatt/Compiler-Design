@@ -1,0 +1,98 @@
+{
+  "type": "Document",
+  "children": [
+    {
+      "type": "Heading",
+      "level": 1,
+      "content": "Project Title"
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Hello "
+        },
+        {
+          "type": "Bold",
+          "child": {
+            "type": "Text",
+            "value": "World"
+          }
+        },
+        {
+          "type": "Text",
+          "value": " and "
+        },
+        {
+          "type": "Italic",
+          "child": {
+            "type": "Text",
+            "value": "Markdown"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "level": 2,
+      "content": "Features"
+    },
+    {
+      "type": "ListNode",
+      "items": [
+        {
+          "type": "ListItem",
+          "content": "Lexer"
+        },
+        {
+          "type": "ListItem",
+          "content": "Parser"
+        },
+        {
+          "type": "ListItem",
+          "content": "Generator"
+        }
+      ]
+    },
+    {
+      "type": "ListNode",
+      "items": [
+        {
+          "type": "ListItem",
+          "content": "Step One\r"
+        },
+        {
+          "type": "ListItem",
+          "content": "Step Two\r"
+        }
+      ]
+    },
+    {
+      "type": "BlockQuote",
+      "content": "This is a blockquote"
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Image",
+          "url": "logo.png",
+          "alt": "Logo"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Link",
+          "url": "https://openai.com"
+        }
+      ]
+    },
+    {
+      "type": "CodeBlock"
+    }
+  ]
+}

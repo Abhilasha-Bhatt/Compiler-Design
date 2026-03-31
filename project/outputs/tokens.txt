@@ -1,0 +1,35 @@
+HEADING(1)
+TEXT(Project Title)
+NEWLINE
+TEXT(Hello )
+BOLD
+TEXT(World)
+BOLD
+TEXT( and )
+ITALIC
+TEXT(Markdown)
+ITALIC
+NEWLINE
+HEADING(2)
+TEXT(Features)
+NEWLINE
+LIST_ITEM
+TEXT(Lexer)
+LIST_ITEM
+TEXT(Parser)
+LIST_ITEM
+TEXT(Generator)
+NEWLINE
+ORDERED_LIST_ITEM
+TEXT(Step One)
+ORDERED_LIST_ITEM
+TEXT(Step Two)
+NEWLINE
+BLOCKQUOTE(This is a blockquote)
+NEWLINE
+IMAGE(('Logo', 'logo.png'))
+NEWLINE
+LINK(('OpenAI', 'https://openai.com'))
+NEWLINE
+CODE_BLOCK_START(python)
+TEXT(print("Hello from code block"))
