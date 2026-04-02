@@ -1,15 +1,18 @@
-function upload() {
-    const file = document.getElementById("fileInput").files[0];
-    const format = document.getElementById("format").value;
+let results = {};
+let currentView = "html";
 
-    if (!file) {
-        alert("Upload file first!");
-        return;
-    }
+function process() {
+    const file = document.getElementById("fileInput").files[0];
+    const text = document.getElementById("markdownInput").value;
 
     const formData = new FormData();
-    formData.append("file", file);
-    formData.append("format", format);
+
+    if (file) {
+        formData.append("file", file);
+    } else {
+        const blob = new Blob([text], { type: "text/plain" });
+        formData.append("file", blob, "input.md");
+    }
 
     fetch("/process", {
         method: "POST",
@@ -17,7 +20,31 @@ function upload() {
     })
     .then(res => res.json())
     .then(data => {
-        document.getElementById("output").textContent = data.result;
-    })
-    .catch(err => console.error(err));
+        results = data;
+        updateOutput();
+    });
+}
+
+function setView(view, el) {
+    currentView = view;
+
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    el.classList.add("active");
+
+    updateOutput();
+}
+
+function updateOutput() {
+    const output = document.getElementById("output");
+    const preview = document.getElementById("preview");
+
+    if (currentView === "preview") {
+        output.style.display = "none";
+        preview.style.display = "block";
+        preview.srcdoc = results["html"] || "<h3>No Preview</h3>";
+    } else {
+        preview.style.display = "none";
+        output.style.display = "block";
+        output.textContent = results[currentView] || "";
+    }
 }

@@ -17,7 +17,7 @@ OUTPUT_DIR = "outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
-# ✅ MAIN UI ROUTE (IMPORTANT)
+# ✅ UI ROUTE
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -51,40 +51,64 @@ def save_ast(ast):
         f.write(print_ast(ast))
 
 
-# ✅ PROCESS ROUTE
+# ✅ MAIN PROCESS
 @app.route("/process", methods=["POST"])
 def process():
 
-    file = request.files["file"]
-    output_format = request.form.get("format")
+    file = request.files.get("file")
+    content = ""
 
-    content = file.read().decode("utf-8")
+    if file:
+        content = file.read().decode("utf-8")
 
+    # -------- LEXER --------
     tokens = tokenize(content)
     save_tokens(tokens)
 
+    # -------- PARSER --------
     parser = Parser(tokens)
     ast = parser.parse_document()
     save_ast(ast)
 
+    # -------- VALIDATION --------
     validate(ast)
+
+    # -------- OPTIMIZATION --------
     ast = optimize(ast)
 
+    # -------- JSON --------
     json_output = ast_to_json(ast)
 
     with open(f"{OUTPUT_DIR}/ast.json", "w") as f:
         json.dump(json_output, f, indent=2)
 
-    if output_format == "html":
-        output = generate_html(ast)
-        with open(f"{OUTPUT_DIR}/output.html", "w") as f:
-            f.write(output)
-    else:
-        output = generate_typst(ast)
-        with open(f"{OUTPUT_DIR}/output.typ", "w") as f:
-            f.write(output)
+    # -------- OUTPUTS --------
+    html_output = generate_html(ast)
+    typst_output = generate_typst(ast)
 
-    return jsonify({"result": output})
+    with open(f"{OUTPUT_DIR}/output.html", "w") as f:
+        f.write(html_output)
+
+    with open(f"{OUTPUT_DIR}/output.typ", "w") as f:
+        f.write(typst_output)
+
+    # -------- READ FILES --------
+    with open(f"{OUTPUT_DIR}/tokens.txt") as f:
+        tokens_data = f.read()
+
+    with open(f"{OUTPUT_DIR}/ast.txt") as f:
+        ast_data = f.read()
+
+    with open(f"{OUTPUT_DIR}/ast.json") as f:
+        json_data = f.read()
+
+    return jsonify({
+        "html": html_output,
+        "typst": typst_output,
+        "tokens": tokens_data,
+        "ast": ast_data,
+        "json": json_data
+    })
 
 
 if __name__ == "__main__":
