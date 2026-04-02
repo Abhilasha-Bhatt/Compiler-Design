@@ -1,5 +1,7 @@
 Document
   Heading
+  Heading
+  Heading
   Paragraph
   Paragraph
     Text
@@ -8,21 +10,34 @@ Document
     Text
     Italic
       Text
+    Text
   Heading
   Paragraph
+    Text
+    Text
+    Text
   ListNode
     ListItem
     ListItem
-    ListItem
   Paragraph
-  ListNode
-    ListItem
-    ListItem
-  Paragraph
-  BlockQuote
-  Paragraph
-  Paragraph
-    Image
+  Heading
   Paragraph
     Link
-  CodeBlock
+    Image
+  Heading
+  Paragraph
+    Text
+    InlineCode
+    Text
+  Paragraph
+    Text
+    Text
+    Text
+  Heading
+  BlockQuote
+  BlockQuote
+  Paragraph
+  Heading
+  Paragraph
+  Table
+  Paragraph

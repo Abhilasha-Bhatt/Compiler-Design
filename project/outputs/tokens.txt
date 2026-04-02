@@ -1,35 +1,58 @@
 HEADING(1)
-TEXT(Project Title)
-NEWLINE
-TEXT(Hello )
-BOLD
-TEXT(World)
-BOLD
-TEXT( and )
-ITALIC
-TEXT(Markdown)
-ITALIC
-NEWLINE
+TEXT(Heading 1)
 HEADING(2)
-TEXT(Features)
+TEXT(Heading 2)
+HEADING(3)
+TEXT(Heading 3)
 NEWLINE
-LIST_ITEM
-TEXT(Lexer)
-LIST_ITEM
-TEXT(Parser)
-LIST_ITEM
-TEXT(Generator)
+TEXT(This is a paragraph of text. You can make text )
+BOLD
+TEXT(bold)
+BOLD
+TEXT(, )
+ITALIC
+TEXT(italic)
+ITALIC
+TEXT(, or ~~strikethrough~~.)
+NEWLINE
+HEADING(3)
+TEXT(Lists)
+TEXT(* Unordered list item 1)
+TEXT(* Unordered list item 2)
+TEXT(  * Nested item)
 NEWLINE
 ORDERED_LIST_ITEM
-TEXT(Step One)
+TEXT(Ordered list item 1)
 ORDERED_LIST_ITEM
-TEXT(Step Two)
+TEXT(Ordered list item 2)
 NEWLINE
-BLOCKQUOTE(This is a blockquote)
+HEADING(3)
+TEXT(Links and Images)
+LINK(('Visit Google', 'https://www.google.com'))
+IMAGE(('Alt text for image', 'https://example.com'))
 NEWLINE
-IMAGE(('Logo', 'logo.png'))
+HEADING(3)
+TEXT(Code)
+TEXT(Inline code looks like )
+INLINE_CODE(this)
+TEXT(.)
 NEWLINE
-LINK(('OpenAI', 'https://openai.com'))
-NEWLINE
+TEXT(Fenced code block with syntax highlighting:)
 CODE_BLOCK_START(python)
-TEXT(print("Hello from code block"))
+TEXT(def hello_world():)
+TEXT(    print("Hello, Markdown!"))
+CODE_BLOCK_END
+NEWLINE
+HEADING(3)
+TEXT(Blockquotes)
+BLOCKQUOTE(This is a blockquote.)
+BLOCKQUOTE(> This is a nested blockquote.)
+NEWLINE
+HEADING(3)
+TEXT(Tables)
+NEWLINE
+TABLE_ROW(| Name | Role |)
+TABLE_ROW(| :--- | :--- |)
+TABLE_ROW(| Alice | Developer |)
+TABLE_ROW(| Bob | Designer |)
+NEWLINE

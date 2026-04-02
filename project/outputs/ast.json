@@ -4,95 +4,146 @@
     {
       "type": "Heading",
       "level": 1,
-      "content": "Project Title"
+      "content": "Heading 1"
+    },
+    {
+      "type": "Heading",
+      "level": 2,
+      "content": "Heading 2"
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Heading 3"
     },
     {
       "type": "Paragraph",
       "children": [
         {
           "type": "Text",
-          "value": "Hello "
+          "value": "This is a paragraph of text. You can make text "
         },
         {
           "type": "Bold",
           "child": {
             "type": "Text",
-            "value": "World"
+            "value": "bold"
           }
         },
         {
           "type": "Text",
-          "value": " and "
+          "value": ", "
         },
         {
           "type": "Italic",
           "child": {
             "type": "Text",
-            "value": "Markdown"
+            "value": "italic"
           }
+        },
+        {
+          "type": "Text",
+          "value": ", or ~~strikethrough~~.\r"
         }
       ]
     },
     {
       "type": "Heading",
-      "level": 2,
-      "content": "Features"
-    },
-    {
-      "type": "ListNode",
-      "items": [
-        {
-          "type": "ListItem",
-          "content": "Lexer"
-        },
-        {
-          "type": "ListItem",
-          "content": "Parser"
-        },
-        {
-          "type": "ListItem",
-          "content": "Generator"
-        }
-      ]
-    },
-    {
-      "type": "ListNode",
-      "items": [
-        {
-          "type": "ListItem",
-          "content": "Step One\r"
-        },
-        {
-          "type": "ListItem",
-          "content": "Step Two\r"
-        }
-      ]
-    },
-    {
-      "type": "BlockQuote",
-      "content": "This is a blockquote"
+      "level": 3,
+      "content": "Lists"
     },
     {
       "type": "Paragraph",
       "children": [
         {
-          "type": "Image",
-          "url": "logo.png",
-          "alt": "Logo"
+          "type": "Text",
+          "value": "* Unordered list item 1\r* Unordered list item 2\r  * Nested item\r"
         }
       ]
+    },
+    {
+      "type": "ListNode",
+      "items": [
+        {
+          "type": "ListItem",
+          "content": "Ordered list item 1\r"
+        },
+        {
+          "type": "ListItem",
+          "content": "Ordered list item 2\r"
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Links and Images"
     },
     {
       "type": "Paragraph",
       "children": [
         {
           "type": "Link",
-          "url": "https://openai.com"
+          "url": "https://www.google.com"
+        },
+        {
+          "type": "Image",
+          "url": "https://example.com",
+          "alt": "Alt text for image"
         }
       ]
     },
     {
-      "type": "CodeBlock"
+      "type": "Heading",
+      "level": 3,
+      "content": "Code"
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Inline code looks like "
+        },
+        {
+          "type": "InlineCode",
+          "value": "this"
+        },
+        {
+          "type": "Text",
+          "value": ".\r"
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Fenced code block with syntax highlighting:\rdef hello_world():\r    print(\"Hello, Markdown!\")\r"
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Blockquotes"
+    },
+    {
+      "type": "BlockQuote",
+      "content": "This is a blockquote."
+    },
+    {
+      "type": "BlockQuote",
+      "content": "> This is a nested blockquote."
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Tables"
+    },
+    {
+      "type": "Table"
     }
   ]
 }

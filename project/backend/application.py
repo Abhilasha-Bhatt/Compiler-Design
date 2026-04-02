@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import os
 import json
+from bs4 import BeautifulSoup   # ✅ NEW
 
 from lexer.tokenizer import tokenize
 from parser.parser import Parser, ast_to_json
@@ -17,10 +18,26 @@ OUTPUT_DIR = "outputs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
-# ✅ UI ROUTE
+# FORMAT HTML FUNCTION (NEW)
+def format_html(html):
+    soup = BeautifulSoup(html, "html.parser")
+    return soup.prettify()
+
+
+# UI ROUTE
 @app.route("/")
 def home():
     return render_template("index.html")
+
+
+# PREVIEW ROUTE (NEW)
+@app.route("/preview")
+def preview():
+    try:
+        with open("outputs/output.html", "r") as f:
+            return f.read()
+    except:
+        return "<h2>No Preview Available</h2>"
 
 
 # -------- SAVE FUNCTIONS --------
@@ -51,7 +68,7 @@ def save_ast(ast):
         f.write(print_ast(ast))
 
 
-# ✅ MAIN PROCESS
+# MAIN PROCESS
 @app.route("/process", methods=["POST"])
 def process():
 
@@ -82,12 +99,15 @@ def process():
     with open(f"{OUTPUT_DIR}/ast.json", "w") as f:
         json.dump(json_output, f, indent=2)
 
-    # -------- OUTPUTS --------
-    html_output = generate_html(ast)
-    typst_output = generate_typst(ast)
+    # -------- HTML OUTPUT (FORMATTED) --------
+    raw_html = generate_html(ast)
+    html_output = format_html(raw_html)
 
     with open(f"{OUTPUT_DIR}/output.html", "w") as f:
         f.write(html_output)
+
+    # -------- TYPST --------
+    typst_output = generate_typst(ast)
 
     with open(f"{OUTPUT_DIR}/output.typ", "w") as f:
         f.write(typst_output)

@@ -36,15 +36,11 @@ function setView(view, el) {
 
 function updateOutput() {
     const output = document.getElementById("output");
-    const preview = document.getElementById("preview");
 
     if (currentView === "preview") {
-        output.style.display = "none";
-        preview.style.display = "block";
-        preview.srcdoc = results["html"] || "<h3>No Preview</h3>";
-    } else {
-        preview.style.display = "none";
-        output.style.display = "block";
-        output.textContent = results[currentView] || "";
+        window.open("/preview", "_blank");
+        return;
     }
+
+    output.textContent = results[currentView] || "";
 }

@@ -31,7 +31,7 @@ def main():
         parser = Parser(tokens)
         ast = parser.parse_document()
 
-        print("\n🌳 AST STRUCTURE:\n")
+        print("\n AST STRUCTURE:\n")
         print_ast(ast)
 
 
