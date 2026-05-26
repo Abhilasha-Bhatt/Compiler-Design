@@ -1,58 +1,24 @@
 HEADING(1)
-TEXT(Heading 1)
+TEXT(My Website)
+NEWLINE
 HEADING(2)
-TEXT(Heading 2)
-HEADING(3)
-TEXT(Heading 3)
+TEXT(Welcome)
 NEWLINE
-TEXT(This is a paragraph of text. You can make text )
-BOLD
-TEXT(bold)
-BOLD
-TEXT(, )
-ITALIC
-TEXT(italic)
-ITALIC
-TEXT(, or ~~strikethrough~~.)
+TEXT(This is a simple Markdown example.)
 NEWLINE
 HEADING(3)
-TEXT(Lists)
-TEXT(* Unordered list item 1)
-TEXT(* Unordered list item 2)
-TEXT(  * Nested item)
+TEXT(Features)
 NEWLINE
-ORDERED_LIST_ITEM
-TEXT(Ordered list item 1)
-ORDERED_LIST_ITEM
-TEXT(Ordered list item 2)
-NEWLINE
-HEADING(3)
-TEXT(Links and Images)
-LINK(('Visit Google', 'https://www.google.com'))
-IMAGE(('Alt text for image', 'https://example.com'))
+LIST_ITEM
+TEXT(Fast)
+LIST_ITEM
+TEXT(Simple)
+LIST_ITEM
+TEXT(Easy to convert to HTML)
 NEWLINE
 HEADING(3)
-TEXT(Code)
-TEXT(Inline code looks like )
-INLINE_CODE(this)
-TEXT(.)
+TEXT(Code Example)
 NEWLINE
-TEXT(Fenced code block with syntax highlighting:)
-CODE_BLOCK_START(python)
-TEXT(def hello_world():)
-TEXT(    print("Hello, Markdown!"))
-CODE_BLOCK_END
-NEWLINE
-HEADING(3)
-TEXT(Blockquotes)
-BLOCKQUOTE(This is a blockquote.)
-BLOCKQUOTE(> This is a nested blockquote.)
-NEWLINE
-HEADING(3)
-TEXT(Tables)
-NEWLINE
-TABLE_ROW(| Name | Role |)
-TABLE_ROW(| :--- | :--- |)
-TABLE_ROW(| Alice | Developer |)
-TABLE_ROW(| Bob | Designer |)
-NEWLINE
+CODE_BLOCK_START(ts)
+TEXT(const message: string = "Hello TypeScript";)
+TEXT(console.log(message);)

@@ -1,12 +1,17 @@
-= My Website
-== Welcome
+# My Website
+
+## Welcome
+
 This is a simple Markdown example.
-=== Features
+
+### Features
+
 - Fast
 - Simple
 - Easy to convert to HTML
-=== Code Example
+
+### Code Example
+
 ```ts
 const message: string = "Hello TypeScript";
 console.log(message);
-```

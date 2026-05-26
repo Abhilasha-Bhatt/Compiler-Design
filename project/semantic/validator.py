@@ -40,10 +40,11 @@ def validate(node):
     visit(node)
 
     if errors:
-        print("\n⚠️ VALIDATION ERRORS:")
+        # Avoid emoji/unicode characters to prevent Windows console encoding errors.
+        print("\nVALIDATION ERRORS:")
         for e in errors:
             print("-", e)
     else:
-        print("\n✅ No semantic errors found!")
+        print("\nNo semantic errors found!")
 
     return errors

@@ -1,43 +1,17 @@
 Document
   Heading
-  Heading
+  Paragraph
   Heading
   Paragraph
   Paragraph
-    Text
-    Bold
-      Text
-    Text
-    Italic
-      Text
     Text
   Heading
   Paragraph
-    Text
-    Text
-    Text
   ListNode
     ListItem
     ListItem
+    ListItem
   Paragraph
   Heading
   Paragraph
-    Link
-    Image
-  Heading
-  Paragraph
-    Text
-    InlineCode
-    Text
-  Paragraph
-    Text
-    Text
-    Text
-  Heading
-  BlockQuote
-  BlockQuote
-  Paragraph
-  Heading
-  Paragraph
-  Table
-  Paragraph
+  CodeBlock
