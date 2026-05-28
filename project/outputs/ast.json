@@ -4,51 +4,146 @@
     {
       "type": "Heading",
       "level": 1,
-      "content": "My Website"
+      "content": "Heading 1"
     },
     {
       "type": "Heading",
       "level": 2,
-      "content": "Welcome"
+      "content": "Heading 2"
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Heading 3"
     },
     {
       "type": "Paragraph",
       "children": [
         {
           "type": "Text",
-          "value": "This is a simple Markdown example."
+          "value": "This is a paragraph of text. You can make text "
+        },
+        {
+          "type": "Bold",
+          "child": {
+            "type": "Text",
+            "value": "bold"
+          }
+        },
+        {
+          "type": "Text",
+          "value": ", "
+        },
+        {
+          "type": "Italic",
+          "child": {
+            "type": "Text",
+            "value": "italic"
+          }
+        },
+        {
+          "type": "Text",
+          "value": ", or ~~strikethrough~~."
         }
       ]
     },
     {
       "type": "Heading",
       "level": 3,
-      "content": "Features"
+      "content": "Lists"
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "* Unordered list item 1* Unordered list item 2  * Nested item"
+        }
+      ]
     },
     {
       "type": "ListNode",
       "items": [
         {
           "type": "ListItem",
-          "content": "Fast"
+          "content": "Ordered list item 1"
         },
         {
           "type": "ListItem",
-          "content": "Simple"
-        },
-        {
-          "type": "ListItem",
-          "content": "Easy to convert to HTML"
+          "content": "Ordered list item 2"
         }
       ]
     },
     {
       "type": "Heading",
       "level": 3,
-      "content": "Code Example"
+      "content": "Links and Images"
     },
     {
-      "type": "CodeBlock"
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Link",
+          "url": "https://www.google.com"
+        },
+        {
+          "type": "Image",
+          "url": "https://example.com",
+          "alt": "Alt text for image"
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Code"
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Inline code looks like "
+        },
+        {
+          "type": "InlineCode",
+          "value": "this"
+        },
+        {
+          "type": "Text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Text",
+          "value": "Fenced code block with syntax highlighting:def hello_world():    print(\"Hello, Markdown!\")"
+        }
+      ]
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Blockquotes"
+    },
+    {
+      "type": "BlockQuote",
+      "content": "This is a blockquote."
+    },
+    {
+      "type": "BlockQuote",
+      "content": "> This is a nested blockquote."
+    },
+    {
+      "type": "Heading",
+      "level": 3,
+      "content": "Tables"
+    },
+    {
+      "type": "Table"
     }
   ]
 }
